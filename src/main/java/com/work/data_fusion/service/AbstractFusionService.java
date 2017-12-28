@@ -12,12 +12,12 @@ public abstract class AbstractFusionService {
 		Collection<DataGroup> dataGroups = loadDataGroup();
 		Map<String, DataGroup> dataGroupMap = new HashMap<String, DataGroup>(dataGroups.size());
 		for (DataGroup dataGroup : dataGroups) {
-			dataGroupMap.put(dataGroup.getGroupId(), dataGroup);
+			dataGroupMap.put(dataGroup.getId(), dataGroup);
 		}
 		Collection<Data> datas = loadData();
 		for (Data data : datas) {
 			DataGroup fuseResult = fuse(data, dataGroupMap.values());
-			dataGroupMap.put(fuseResult.getGroupId(), fuseResult);
+			dataGroupMap.put(fuseResult.getId(), fuseResult);
 		}
 		return save(dataGroupMap.values());
 	}
