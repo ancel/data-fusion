@@ -26,7 +26,7 @@ public class FusionService extends AbstractFusionService {
 	}
 
 	@Override
-	public DataGroup fuseData(Data data, Collection<DataGroup> dataGroups) {
+	public DataGroup fuse(Data data, Collection<DataGroup> dataGroups) {
 		return fusion.fuse(data, dataGroups);
 	}
 

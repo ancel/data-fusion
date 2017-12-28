@@ -16,13 +16,13 @@ public abstract class AbstractFusionService {
 		}
 		Collection<Data> datas = loadData();
 		for (Data data : datas) {
-			DataGroup fuseResult = fuseData(data, dataGroupMap.values());
+			DataGroup fuseResult = fuse(data, dataGroupMap.values());
 			dataGroupMap.put(fuseResult.getGroupId(), fuseResult);
 		}
 		return save(dataGroupMap.values());
 	}
 	public abstract Collection<DataGroup> loadDataGroup();
 	public abstract Collection<Data> loadData();
-	public abstract DataGroup fuseData(Data data, Collection<DataGroup> dataGroups);
+	public abstract DataGroup fuse(Data data, Collection<DataGroup> dataGroups);
 	public abstract boolean save(Collection<DataGroup> dataGroups);
 }
