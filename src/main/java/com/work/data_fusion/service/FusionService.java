@@ -14,6 +14,17 @@ public class FusionService extends AbstractFusionService {
 	private DataGroupLoader dataGroupLoader;
 	private DataFusion fusion;
 	private DataGroupStorage dataGroupStorage;
+	
+	public FusionService(DataLoader dataLoader,
+			DataGroupLoader dataGroupLoader, 
+			DataFusion fusion,
+			DataGroupStorage dataGroupStorage) {
+		super();
+		this.dataLoader = dataLoader;
+		this.dataGroupLoader = dataGroupLoader;
+		this.fusion = fusion;
+		this.dataGroupStorage = dataGroupStorage;
+	}
 
 	@Override
 	public Collection<DataGroup> loadDataGroup() {
